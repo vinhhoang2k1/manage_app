@@ -14,6 +14,7 @@ import "./auth.scss"
 import useAuth from '../../ApiServices/login';
 import { useAppDispatch } from "../../Hooks/redux.hook"
 import { actionSetStudent } from "../../Redux/reducers/auth.reducer"
+import { useNavigate } from "react-router-dom"
 type Props = {}
 const schema = yup.object().shape({
   email: yup.string().required('Bạn phải nhập tên đặng nhập !'),
@@ -32,18 +33,19 @@ const Login = (props: Props) => {
   } = useForm<LoginRequest>({
     resolver: yupResolver(schema),
   });
+  const navigate = useNavigate()
   const dispatch = useAppDispatch()
   const { login } = useAuth()
   watch(["email", "password"])
   const onSubmit = (values: LoginRequest) => {
-    console.log('values', values);
     login({
       data: values,
-      successCallback: (response: any) => {
+      successCallback: async (response: any) => {
         console.log('res', response);
         const { token, students } = response.result.data
-        localStorage.setItem("token", token);
-        dispatch(actionSetStudent(students))
+        await localStorage.setItem("token", token);
+        await dispatch(actionSetStudent(students))
+        navigate('/admin')
       },
     })
   }

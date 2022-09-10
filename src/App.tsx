@@ -17,7 +17,7 @@ function App() {
         <MessageDialog />
         <ConfirmDialog />
       </div>
-    // </ThemeProvider>
+    </ThemeProvider>
   );
 }
 
