@@ -1,0 +1,24 @@
+@import "../Style/index";
+
+.main-app {
+    position: relative;
+    min-height: calc(100vh - #{$height-header});
+    padding-top: $height-header;
+    display: flex;
+
+    .main-item {
+        &__sidebar {
+            width: $width-sidebar;
+            position: fixed;
+            height: 100%;
+            z-index: $z-index_sidebar;
+        }
+
+        &__content {
+            width: calc(100vw - #{$width-sidebar});
+            margin-left: $width-sidebar;
+            padding: $computed-xl;
+            background-color: $bg-color_gray;
+        }
+    }
+}

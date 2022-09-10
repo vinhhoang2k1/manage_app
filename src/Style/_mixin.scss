@@ -1,0 +1,26 @@
+@mixin flex($aligin-item, $justify-content) {
+    display: flex;
+    align-items: $aligin-item;
+    justify-content: $justify-content;
+}
+
+@mixin overlay {
+    background-color: rgba($color: #000000, $alpha: 0.6);
+}
+
+@mixin scrollBar($width : 2px, $height: 5px) {
+    &::-webkit-scrollbar-thumb {
+      background-color: #372c77;
+      border-radius: 5px;
+    }
+  
+    &::-webkit-scrollbar {
+      width: $width;
+      height: $height;
+      background-color: transparent;
+    }
+  }
+
+  @mixin card_shadow() {
+    
+  }

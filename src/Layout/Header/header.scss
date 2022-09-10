@@ -1,0 +1,11 @@
+@import "../../Style/index";
+
+.header-wrap {
+    height: $height-header;
+    background: $linear-gradient;
+    color: $white;
+    position: fixed;
+    width: 100%;
+    z-index: $z-index_header;
+    box-shadow: $shadow-header $color-shadow-header;
+}

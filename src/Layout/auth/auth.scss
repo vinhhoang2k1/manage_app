@@ -1,0 +1,26 @@
+@import "../../Style/index";
+
+.auth {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $bg-color-light;
+
+    .wrap-form {
+        margin: auto;
+        padding: $computed_xl;
+        width: 450px;
+        height: 600px;
+        color: $black;
+        background-color: $white;
+        border-radius: $border-radius_xl;
+        box-shadow: $box-shadow;
+
+        .head {
+            text-align: center;
+        }
+
+        .body-form {}
+    }
+}

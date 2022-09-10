@@ -1,0 +1,75 @@
+@import "../../Style/index";
+
+.sidebar-wraper {
+    width: 100%;
+    height: 100%;
+    background-color: $white;
+    box-shadow: $box-shadow;
+    overflow-y: auto;
+    padding: $computed-xl $computed-xl $computed-xl 0;
+
+    .list-item {
+        @include scrollBar;
+        height: 2000px;
+
+        .bold {
+            margin: $computed-m 0 0 0;
+
+
+            .content {
+                cursor: pointer;
+                border-top-right-radius: $computed_xxl;
+                border-bottom-right-radius: $computed_xxl;
+                padding: $computed-m $computed-xl $computed-m $computed-xl;
+                @include flex(center, space-between);
+                transition: all .2s ease;
+                color: $black;
+                background-color: $bg-color_gray;
+
+                &.active {
+                    background: $linear-gradient;
+                    color: $white;
+                }
+
+                &:hover {
+                    background: $linear-gradient;
+                    color: $white;
+                }
+
+                .title {
+                    font-size: 1.3rem;
+                    font-weight: 400;
+                }
+            }
+
+            .wrap-sub-menu {
+                max-height: 0;
+                margin: 0 2rem;
+                overflow: hidden;
+
+                &.active {
+                    max-height: max-content;
+                }
+            }
+
+            .list_sub-menu {
+                margin: $computed-m 0;
+                transition: all .5s linear;
+                overflow: hidden;
+                font-size: $font-size_l;
+                height: 100%;
+
+                .item_sub-menu {
+                    cursor: pointer;
+                    width: 100%;
+                    margin: $computed-m 0 0 0;
+                    padding: $computed_m;
+                    &.active {
+                        background-color: $bg-color_gray;
+                        border-radius: $border-radius_xxl;
+                    }
+                }
+            }
+        }
+    }
+}
