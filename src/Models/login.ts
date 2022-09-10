@@ -1,4 +1,11 @@
+import { SuccessCallback, ErrorCallback } from "./fetch.models"
 export interface LoginRequest {
-    username: string,
+    email: string,
     password: string,
+}
+
+export interface RequestLogin {
+    data: LoginRequest,
+    successCallback?: SuccessCallback,
+    errorCallback?: ErrorCallback,
 }

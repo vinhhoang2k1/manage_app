@@ -14,6 +14,7 @@ const Layout = Loader(lazy(() => import("./Layout")))
 const LayoutAuth = Loader(lazy(() => import("./Layout/auth")))
 const Test = Loader(lazy(() => import("./Pages/test")))
 const Dashboard = Loader(lazy(() => import("./Pages/Dashboard")))
+const Login = Loader(lazy(() => import("./Pages/auth/login")))
 
 const router: RouteObject[] = [
   {
@@ -32,9 +33,16 @@ const router: RouteObject[] = [
     ]
   },
   {
-    path: 'login',
-    element: <LayoutAuth/>
+    path: 'auth',
+    element: <LayoutAuth />,
+    children: [
+      {
+        path: 'login',
+        element: <Login />
+      }
+    ]
   }
+
 ]
 
 export default router;
