@@ -6,6 +6,7 @@ type Props = {}
 const test = (props: Props) => {
   return (
     <Box sx={{height:'2000px'}}>test</Box>
+    
   )
 }
 
