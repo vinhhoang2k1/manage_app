@@ -1,0 +1,13 @@
+version: '1'
+
+services:
+  frontend:
+    container_name: "FE-manage"
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    command: npm start
+    ports:
+      - "3000:3000"
+    stdin_open: true  
+    restart: always
